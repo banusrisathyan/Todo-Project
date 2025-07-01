@@ -19,13 +19,14 @@ function Login() {
     }
   }, [navigate]);
 
-  const handleGoogleLogin = () => {
-    window.location.href = `${API}`;
-  };
+const handleGoogleLogin = () => {
+  window.location.href = `${API}/auth/google`;
+};
 
-  const handleGitHubLogin = () => {
-    window.location.href = `${API}`;
-  };
+const handleGitHubLogin = () => {
+  window.location.href = `${API}/auth/github`;
+};
+
 
   return (
   <div className="login-wrapper"style={{ backgroundImage: `url(${backgroundImage})` }}>
