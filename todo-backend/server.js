@@ -9,7 +9,13 @@ dotenv.config();
 const app = express(); // ✅ Define app before using it
 
 // Middleware
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({
+  origin: [
+    "http://localhost:3000",                                // local dev
+    "https://todo-project-tau-one.vercel.app"               // ✅ production frontend
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(passport.initialize()); // ✅ Use passport middleware after app is defined
 

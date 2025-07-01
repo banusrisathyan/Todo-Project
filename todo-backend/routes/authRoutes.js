@@ -51,7 +51,7 @@ router.get(
       expiresIn: "7d",
     });
     // Redirect to frontend with token
-    res.redirect(`http://localhost:3000?token=${token}`);
+  res.redirect(`https://todo-project-tau-one.vercel.app?token=${token}`);
   }
 );
 
