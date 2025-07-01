@@ -9,10 +9,11 @@ const router = express.Router();
 // 1. Configure Google Strategy
 passport.use(
   new GoogleStrategy(
+ new GoogleStrategy(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "/auth/google/callback",
+      callbackURL: "https://todo-backend-a8kh.onrender.com/auth/google/callback", // ✅ FIXED
     },
     async (accessToken, refreshToken, profile, done) => {
       let user = await User.findOne({ googleId: profile.id });
@@ -67,7 +68,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      callbackURL: "/auth/github/callback",
+      callbackURL: "https://todo-backend-a8kh.onrender.com/auth/github/callback", // ✅ Fixed here
     },
     async (accessToken, refreshToken, profile, done) => {
       let user = await User.findOne({ githubId: profile.id });
