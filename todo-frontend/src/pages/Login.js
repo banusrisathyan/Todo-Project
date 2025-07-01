@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/main.css";
 import backgroundImage from '../assests/to-do.png';
+const API = "https://todo-backend-a8kh.onrender.com";
 
 
 function Login() {
@@ -19,11 +20,11 @@ function Login() {
   }, [navigate]);
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:5000/auth/google";
+    window.location.href = `${API}`;
   };
 
   const handleGitHubLogin = () => {
-    window.location.href = "http://localhost:5000/auth/github";
+    window.location.href = `${API}`;
   };
 
   return (
